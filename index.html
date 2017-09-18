@@ -341,10 +341,13 @@ $( '#MDembeddedHTML' ).click(function() {
 });
 	
 	
-$('.lp_expandable_textarea').click(function() {
-     console.log("click");
+
+	
+$(document).on('click', function(evt) {
+     if($(evt.target).is('.lp_expandable_textarea')) {
      localStorage.setItem('MyWebMessaging', 'yes');
-});	
+     }
+});
 	
 	
 	

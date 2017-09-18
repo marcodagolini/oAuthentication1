@@ -324,6 +324,7 @@ $( '#MDembeddedHTML' ).click(function() {
      function ahead(){
 		
 		$(document).on('click', function(evt) {
+		     console.log(evt);
                      if($(evt.target).is('.lp_send-icon')) {
                         localStorage.setItem('MyWebMessaging', 'yes');
                      }

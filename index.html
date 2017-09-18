@@ -1,0 +1,423 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimumscale=1,
+maximum-scale=1">
+
+		
+
+	
+
+	
+<style>
+.LEE_BOARD_ITEM,.lp-panel-body,.lp-panel-heading{cursor:pointer!important;text-align:center!important}.LEE_BOARD_ITEM,.lp-panel-body,.lp-panel-group,.lp-panel-heading{text-align:center!important}.LEE_BOARD_ITEM{border-top:2px #ebf3fb solid!important;padding:4px!important;margin-top:2px!important;vertical-align:middle!important}hr.le-divider{background-color:#bababa!important;height:1px!important;border:1px!important;margin:2px!important}.lp-panel-group{font-family:Verdana,Geneva,sans-serif!important;font-size:13px!important;height:100%!important;white-space:nowrap!important;margin-left:6px!important;margin-right:6px!important;display:-webkit-box!important;display:-moz-box!important;display:-webkit-flexbox!important;display:-ms-flexbox!important;display:-webkit-flex!important;display:flex!important}.lp-panel-default{border:1px solid #cacaca!important;background-color:#FAFAFA!important;display:inline-block!important}.lp-panel-heading{margin:3px!important;max-height:111px!important}.lp-panel-body{overflow:hidden!important;color:#1178D9!important;padding:.66rem!important;flex:1!important;border-top:1px solid #dadada!important;border-bottom:1px solid #dadada!important}.lp-panel a:hover{background-color:#c1c1c1!important;text-decoration:none!important}.lp-panel-text{text-align:left!important;padding:.25rem!important;word-wrap:break-word!important;white-space:normal!important}.lp-title-text{font-size:15px!important}.lp-type-text{font-size:13px!important;color:#999!important}.lp-bold-text{padding-top:.5rem!important;font-weight:700!important}.lp-panel-heading>img{width:auto!important;max-width:70%!important;height:100%!important;max-height:111px!important}hr{margin:0!important!important}
+</style>
+
+
+<script>
+"use strict";function initVisitor(){function e(){var e=a.querySelector(".lp_transcript_widget.lp_lpview_widgetContent.transcript_scroll");l&&l.disconnect(),e?l=t(e):console.warn("no chat line container available")}function t(e){function t(){for(var t=e.querySelectorAll(a),l=0;l<t.length;l++){var i=t[l];i.classList.add("LEE_TREATED");var n=i.querySelector(".lp_chat_line>.lp_title_text");0!==n.children.length&&3!==n.firstChild.nodeType&&(n=n.firstChild);var r=n&&n.textContent?n.textContent:n.innerText?n.innerText:"";if(0===r.indexOf("@@LP@@{")){u=r.substring("@@LP@@".length,r.lastIndexOf("}")+1);try{if(n.classList.add("LEE_BOARD_LINE"),u=JSON.parse(u),n.innerText=u.content,(y=document.createElement("div")).classList.add("lp-panel-group"),y.style.width=220*u.boards.length+"px",u.boards){for(var s=0;s<u.boards.length;s++){var o=u.boards[s],d=document.createElement("div");d.classList.add("lp-panel"),d.classList.add("lp-panel-default"),y.appendChild(d),d.style.border="1px solid #cacaca",d.style.backgroundColor="#FAFAFA",d.style.clear="both",d.style.width="220px",d.style.textAlign="center",d.style.whiteSpace="nowrap",0==s&&(d.style.borderTopLeftRadius="4px",d.style.borderBottomLeftRadius="4px"),s==u.boards.length-1&&(d.style.borderTopRightRadius="4px",d.style.borderBottomRightRadius="4px");for(var c=document.createElement("div"),l=0;l<o.length;l++){var p=o[l];if("img"===p.type)c.innerHTML=p.data.imageUrl?"<img src='"+p.data.imageUrl+"'>":"",c.classList.add("lp-panel-heading"),c.style.textAlign="center",d.appendChild(c);else if("btn"===p.type){h=p.data.text.length>20?p.data.text.substring(0,20)+"...":p.data.text;d.innerHTML=d.innerHTML+'<div class="lp-panel-body" title="'+p.data.text+'"   onclick="console.log(this.title); (document.getElementsByClassName(\'lpview_form_textarea\')[0]).value = this.title; return false;">'+h+"</div>"}else if("map"===p.type){var h=p.data.text.length>20?p.data.text.substring(0,20)+"...":p.data.text;c.innerHTML="<a target='_blank' href='https://www.google.com/maps/place//@"+p.data.latitude+","+p.data.longitude+",14z/'><img src='https://maps.googleapis.com/maps/api/staticmap?center="+p.data.latitude+","+p.data.longitude+"&markers=color:blue%7Clabel:A%7C"+p.data.latitude+","+p.data.longitude+"&zoom=14&size=167x111&key=AIzaSyD0FAiv_la9dq8c70_ETYu1i-eoaJktNEo' style='width:auto;height:90%;max-height:111px;'></a>",c.classList.add("lp-panel-heading"),c.style.textAlign="center",d.appendChild(c),d.innerHTML=d.innerHTML+'<div class="lp-panel-body" title="'+p.data.text+'"  onclick="console.log(this.title);  (document.getElementsByClassName(\'lpview_form_textarea\')[0]).value = this.title; return false;">'+h+"</div>"}}}(v=document.createElement("div")).appendChild(y),v.style.maxWidth="260px",v.style.overflowX="auto",v.style.whiteSpace="nowrap",v.style.height="auto",(x=document.createElement("div")).appendChild(v),i.insertAdjacentHTML("afterend",x.innerHTML)}}catch(e){console.error(e),n.innerText="Error processing content"}}if(0===r.indexOf("lpsc:{")){var u=r.substring("lpsc:".length,r.lastIndexOf("}")+1);try{n.classList.add("LEE_BOARD_LINE"),u=JSON.parse(u).layout;var y=document.createElement("div");y.classList.add("lp-panel-group"),n.innerText="";if(u.hasOwnProperty("type")&&u.hasOwnProperty("elements")&&"verticalhorizontal".indexOf(u.type)>-1){function g(e,t){var a=document.createElement("div");a.classList.add("lp-panel"),a.classList.add("lp-panel-default"),t.appendChild(a),a.style.border="1px solid #cacaca",a.style.backgroundColor="#FAFAFA",a.style.clear="both",a.style.width="220px",a.style.textAlign="center",a.style.whiteSpace="nowrap";for(var l=-1,i=0;i<e.length;i++){var n=e[i];0==++l&&(a.style.borderTopLeftRadius="4px",a.style.borderBottomLeftRadius="4px"),l==e.length-1&&(a.style.borderTopRightRadius="4px",a.style.borderBottomRightRadius="4px");var r=document.createElement("div"),s=document.createElement("div");if(n.hasOwnProperty("type"))switch(n.type){case"vertical":g(n.elements,r);break;case"horizontal":console.error("le_enh_vis:: Horizontal subgroups not allowed!");break;case"linkPreview":s.innerHTML="<div><a href='"+n.url+"'>"+n.title+"</a></div>",(s=s.firstChild).style.textAlign="center";break;case"map":s.innerHTML="<div><img src='https://maps.googleapis.com/maps/api/staticmap?center="+n.la+","+n.lo+"&markers=color:blue%7Clabel:A%7C"+n.la+","+n.lo+"&zoom=14&size=167x111&key=AIzaSyD0FAiv_la9dq8c70_ETYu1i-eoaJktNEo' style='width:auto;height:90%;max-height:111px;'></div>",(s=s.firstChild).classList.add("lp-panel-heading"),s.style.textAlign="center";break;case"button":var o=n.title?n.title.length>20?n.title.substring(0,20)+"...":n.title:"";s.innerHTML='<div style="text-align:center;" title="'+n.title+'"   ">'+o+"</div>",s=s.firstChild,r.classList.add("lp-panel-body");break;case"text":for(var d='style ="',c=0;c<Object.keys(n.style).length;c++){var p=Object.keys(n.style)[c];n.style.hasOwnProperty(p)&&(d+=p+": "+n.style[p]+" !important; ")}d+='";',s.innerHTML='<div class="lp-panel-text" '+d+' title="'+n.text+'">'+n.text+"</div>",s=s.firstChild;break;case"image":s.innerHTML=n.url?"<div><img src='"+n.url+"'></div>":"<img />",(s=s.firstChild).classList.add("lp-panel-heading"),s.style.textAlign="center"}if(n.hasOwnProperty("action")&&n.action.hasOwnProperty("type")){switch(n.action.type){case"link":r.innerHTML=linkOut(n.action.uri);break;case"publishText":r.innerHTML=publishTextData(n.action.text);break;case"navigate":r.innerHTML=navigate(n.action.la,n.action.lo)}r.firstChild.appendChild(s)}else r.appendChild(s);a.appendChild(r)}}if("horizontal"===u.type){y.style.width=220*u.elements.length+"px";for(var m=0;m<u.elements.length;m++)g([u.elements[m]],y)}else y.style.width="220px",g(u.elements,y)}var v=document.createElement("div");v.appendChild(y),v.style.maxWidth="260px",v.style.overflowX="auto",v.style.whiteSpace="nowrap",v.style.height="auto",v.title=u.id;var x=document.createElement("div");x.appendChild(v),i.insertAdjacentHTML("afterend",x.innerHTML),i.querySelector(".lp_chat_arrow_border").style.display="none",i.querySelector(".lp_chat_arrow").style.display="none",i.querySelector(".lp_chat_line").style.display="none"}catch(e){console.error(e),n.innerText="Error processing content"}}}}var a=".lp_chat_line_wrapper.lp_agent:not(.LEE_TREATED)",l=new MutationObserver(t);return l.observe(e,{childList:!0,subtree:!0}),t(),l}var a=document.querySelector(".lp_location_center");if(!a)return setTimeout(initVisitor,800);var l=null;new MutationObserver(function(t){e()}).observe(a,{childList:!0}),e()}var publishText="<div onclick=\"console.log(this.firstChild.title); (document.getElementsByClassName('lpview_form_textarea')[0]).value = this.firstChild.title; return false;\" ></div>",publishTextData=function(e){var t=e.replace(/'/gi,"\\'");return"<div onclick=\"console.log('"+t+"'); (document.getElementsByClassName('lpview_form_textarea')[0]).value = '"+t+"'; return false;\" ></div>"},linkOut=function(e){return'<a href="'+e+'" target="_blank"></a>'},navigate=function(e,t){return"<a target='_blank' href="+("https://www.google.com/maps/place//@"+e+","+t+",14z/")+"></a>"},populateField=function(){document.getElementsByClassName("lpview_form_textarea")[0].value=this.innerText};initVisitor();
+</script>
+
+	
+
+	
+
+<!-- BEGIN LivePerson Monitor. -->
+<script type="text/javascript">window.lpTag=window.lpTag||{},"undefined"==typeof window.lpTag._tagCount?(window.lpTag={site:'13099967'||"",section:lpTag.section||"",tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:"1.8.0",_tagCount:1,protocol:"https:",events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0==e?(this._defB=this._defB||[],this._defB.push(t)):1==e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+"//"+(this.ovr&&this.ovr.domain?this.ovr.domain:"lptag.liveperson.net")+"/tag/tag.js?site="+this.site);var a=document.createElement("script");a.setAttribute("charset",e?e:"UTF-8"),i&&a.setAttribute("id",i),a.setAttribute("src",n),document.getElementsByTagName("head").item(0).appendChild(a)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent("onload",function(){t._domReady("domReady")}):(window.addEventListener("DOMContentLoaded",function(){t._domReady("contReady")},!1),window.addEventListener("load",function(){t._domReady("domReady")},!1)),"undefined"==typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger("LPT","DOM_READY",{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;</script>
+<!-- END LivePerson Monitor. -->
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://lpcdn.lpsnmedia.net/api/chat/public/lpChat.min.js"></script>
+
+	
+
+<title>oAuthentication</title>
+
+<style>
+body {
+margin : 10px;
+padding: 2px;
+background-image: url("https://i.imgur.com/HxCotl3.jpg");
+}
+#title {
+padding: 2px;
+font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+font-size: 24px;	
+}
+button {
+    background-color: #f68a1f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 40px;
+    cursor: pointer;
+	border-radius: 4px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+}
+button:hover {
+    background-color: #da7009;
+    color: white;	
+}
+input {
+    
+    padding: 2px 2px;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    font-size: 18px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+	font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+}
+.smallinput {
+    
+    padding: 1px 1px;
+    margin: 1px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+	font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+}
+input:focus {
+    border: 3px solid #555;
+}
+textarea {
+    
+    padding: 10px 10px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    font-size: 24px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+	font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+}
+textarea:focus {
+    border: 3px solid #555;
+}
+#text {
+padding: 14px 0px 0px 0px;
+font-size: 18px;
+font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+}
+#sub {
+background-color: yellow;
+}
+#sendStat {
+text-align: center;
+}
+.smalltext {
+text-align: right;
+width: 80px;
+padding: 3px;
+font-size: 12px;
+font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+}
+</style>
+</head>
+<body>
+
+
+<div id="title">oAuthentication Tester</div>
+
+<div id="text" style="float:left;">Unique Customer ID:</div>
+<input id="sub" size="20" type="input" style="float:left;">
+
+<div style="float:left;">
+	<button type="button" onclick="sendData()">oAuthenticate!</button>
+	<div id="sendStat"></div>
+</div>
+
+<div id="MDembeddedHTML" style="visibility:hidden; float:left;"></div>
+<br><br>
+
+<div>
+	<div class="smalltext">expiresInMinutes:</div>
+	<input id="expiresInMinutes" value="10" float="left" size="10" class="smallinput">
+</div>
+<br><br><br>
+
+<div>
+<div style="float:left;">
+	
+<div style="float:left;" class="smalltext">cstatus:</div>
+<input id="cstatus" value="cancelled" size="30" float="left" class="smallinput"><br>
+	
+<div style="float:left;" class="smalltext">ctype:</div>
+<input id="ctype" value="vip" float="left" size="30" class="smallinput"><br>
+	
+<div style="float:left;" class="smalltext">customerId:</div>
+<input id="customerID" value="138766AC" float="left" size="30" class="smallinput"><br>
+
+<div style="float:left;" class="smalltext">balance:</div>
+<input id="balance" value="-400.99" float="left" size="30" class="smallinput"><br>
+	
+<div style="float:left;" class="smalltext">socialId:</div>
+<input id="socialId" value="3456787654" float="left" size="30" class="smallinput"><br>
+
+<div style="float:left;" class="smalltext">imei:</div>
+<input id="imei" value="99966321" float="left" size="30" class="smallinput"><br>
+
+<div style="float:left;" class="smalltext">userName:</div>
+<input id="userName" value="user000" float="left" size="30" class="smallinput"><br>
+
+<div style="float:left;" class="smalltext">companySize:</div>
+<input id="companySize" value="500" float="left" size="30" class="smallinput"><br>
+
+<div style="float:left;" class="smalltext">accountName:</div>
+<input id="accountName" value="bank corp" float="left" size="30" class="smallinput"><br>
+
+<div style="float:left;" class="smalltext">role:</div>
+<input id="role" value="broker" float="left" size="30" class="smallinput"><br>
+
+<div class="smalltext">lastPaymentDate:</div>
+<div style="float:left;" class="smalltext">day</div>
+<input id="lastPaymentDateDay" value="15" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">month</div>
+<input id="lastPaymentDateMonth" value="10" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">year</div>
+<input id="lastPaymentDateYear" float="left" value="2014" size="30" class="smallinput"><br>
+	
+<div class="smalltext">registrationDate:</div>
+<div style="float:left;" class="smalltext">day</div>
+<input id="registrationDateDay" value="23" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">month</div>
+<input id="registrationDateMonth" value="5" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">year</div>
+<input id="registrationDateYear" value="2013" float="left" size="30" class="smallinput"><br>
+	
+</div>
+	
+
+<div style="float:left;">	
+
+	
+<div style="float:left;" class="smalltext">firstname:</div>
+<input id="firstname" value="John" float="left" size="30" class="smallinput"><br>
+	
+<div style="float:left;" class="smalltext">lastname:</div>
+<input id="lastname" value="Doe" float="left" size="30" class="smallinput"><br>
+	
+<div class="smalltext">visitorAge:</div>
+<div style="float:left;" class="smalltext">age</div>
+<input id="visitorAgeAge" value="34" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">year</div>
+<input id="visitorAgeAgeYear" value="1980" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">month</div>
+<input id="visitorAgeAgeMonth" value="4" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">day</div>
+<input id="visitorAgeAgeDay" value="15" float="left" size="30" class="smallinput"><br>
+	
+<div class="smalltext">contacts:</div>
+<div style="float:left;" class="smalltext">email</div>
+<input id="email" value="myname@example.com" float="left" size="30" class="smallinput"><br>
+<div style="float:left;" class="smalltext">phone</div>
+<input id="phone" value="0039 347 7576577" float="left" size="30" class="smallinput"><br>
+	
+<div style="float:left;" class="smalltext">gender:</div>
+<input id="gender" value="MALE" float="left" size="30" class="smallinput"><br>
+	
+<div style="float:left;" class="smalltext">company:</div>
+<input id="company" value="LivePerson" float="left" size="30" class="smallinput"><br>
+	
+	
+</div>
+</div>
+	
+<br><br><br>
+
+
+
+
+
+
+
+	
+	
+
+    
+	
+<script>
+var sub = "";
+var cstatus = "";
+var ctype = "";
+var customerID = "";
+var balance = "";
+var socialId = "";
+var imei = "";
+var userName = "";
+var companySize = "";
+var accountName = "";
+var role = "";
+var lastPaymentDateDay = "";
+var lastPaymentDateMonth = "";
+var lastPaymentDateYear = "";
+var registrationDateDay = "";
+var registrationDateMonth = "";
+var registrationDateYear = "";
+var firstname = "";
+var lastname = "";
+var visitorAgeAge = "";
+var visitorAgeAgeYear = "";
+var visitorAgeAgeMonth = "";
+var visitorAgeAgeDay = "";
+var email = "";
+var phone = "";
+var gender = "";
+var company = "";
+var expiresInMinutes = "";
+	
+	
+var Token = localStorage.getItem('token');
+	
+	
+	
+lpTag.sdes = lpTag.sdes||[];
+lpTag.sdes.push({"type":"ctmrinfo","info":{customerId: "myID"}});
+var lpGetAuthenticationToken = function(callback) {
+	// function ahead(){
+		
+     		console.log("inside lpGetAuthenticationToken!");
+     		if(callback) callback(Token);
+		
+	// }setTimeout(ahead, 5000);
+};
+if(localStorage.getItem('MyWebMessaging')=="yes"){
+	$( '#MDembeddedHTML' ).click();
+	function ahead(){
+		
+		$(document).on('click', function(evt) {
+                     if($(evt.target).is('.lp_confirm_button')) {
+                        localStorage.setItem('MyWebMessaging', 'no');
+                     }
+                });
+		
+		
+	}setTimeout(ahead, 1000);
+}
+	
+$("#sub").on("input", function() {
+	if ($("#CustomerID").val() != "") {
+            document.getElementById("sendStat").innerHTML = "Ready to oAuthenticate";
+            document.getElementById("sendStat").style = "color : green";
+        }
+	else {
+            document.getElementById("sendStat").innerHTML = "";
+            document.getElementById("sendStat").style = "color : green";
+        }
+});
+	
+$( '#MDembeddedHTML' ).click(function() {
+     lpGetAuthenticationToken();
+     function ahead(){
+		
+		$(document).on('click', function(evt) {
+                     if($(evt.target).is('.lp_send-icon')) {
+                        localStorage.setItem('MyWebMessaging', 'yes');
+                     }
+                });
+    
+     		$(document).on('click', function(evt) {
+                     if($(evt.target).is('.lp_confirm_button')) {
+			console.log("click");
+                        localStorage.setItem('MyWebMessaging', 'no');
+                     }
+                });
+		
+     }setTimeout(ahead, 1000);
+});
+	
+	
+$('.lp_send-icon').click(function() {
+     localStorage.setItem('MyWebMessaging', 'yes');
+});	
+	
+	
+	
+	
+function sendData() {
+	
+	
+  if (($("#sub").val() != "")) {
+	
+	sub = $("#sub").val();
+	cstatus = $("#cstatus").val();
+	ctype = $("#ctype").val();
+	customerID = $("#customerID").val();
+	balance = parseFloat($("#balance").val());
+	socialId = $("#socialId").val();
+	imei = $("#imei").val();
+	userName = $("#userName").val();
+	companySize = $("#companySize").val();
+	accountName = $("#accountName").val();
+	role = $("#role").val();
+	lastPaymentDateDay = $("#lastPaymentDateDay").val();
+	lastPaymentDateMonth = $("#lastPaymentDateMonth").val();
+	lastPaymentDateYear = $("#lastPaymentDateYear").val();
+	registrationDateDay = $("#registrationDateDay").val();
+	registrationDateMonth = $("#registrationDateMonth").val();
+	registrationDateYear = $("#registrationDateYear").val();
+	firstname = $("#firstname").val();
+	lastname = $("#lastname").val();
+	visitorAgeAge = $("#visitorAgeAge").val();
+	visitorAgeAgeYear = $("#visitorAgeAgeYear").val();
+	visitorAgeAgeMonth = $("#visitorAgeAgeMonth").val();
+	visitorAgeAgeDay = $("#visitorAgeAgeDay").val();
+	email = $("#email").val();
+	phone = $("#phone").val();
+	gender = $("#gender").val();
+	company = $("#company").val();
+	expiresInMinutes = $("#expiresInMinutes").val();
+	
+	
+	
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+	    $("#MDembeddedHTML").css({"visibility":"visible", "float":"left"});
+            var jsonResult = JSON.parse(this.responseText);
+            Token = jsonResult.result;
+	    console.log(Token);
+            localStorage.setItem('token', Token);
+	    if(localStorage.getItem('MyWebMessaging')=="yes"){
+		    location.reload();
+	    }
+            lpGetAuthenticationToken();
+	    
+          }
+        });
+        var URLforGET = "https://marco-oauthserver.herokuapp.com/add?sub="+sub+"&cstatus="+cstatus+"&ctype="+ctype+"&customerID="+customerID+"&balance="+balance+"&socialId="+socialId+"&imei="+imei+"&userName="+userName+"&companySize="+companySize+"&accountName="+accountName+"&role="+role+"&lastPaymentDateDay="+lastPaymentDateDay+"&lastPaymentDateMonth="+lastPaymentDateMonth+"&lastPaymentDateYear="+lastPaymentDateYear+"&registrationDateDay="+registrationDateDay+"&registrationDateMonth="+registrationDateMonth+"&registrationDateYear="+registrationDateYear+"&firstname="+firstname+"&lastname="+lastname+"&visitorAgeAge="+visitorAgeAge+"&visitorAgeAgeYear="+visitorAgeAgeYear+"&visitorAgeAgeMonth="+visitorAgeAgeMonth+"&visitorAgeAgeDay="+visitorAgeAgeDay+"&email="+email+"&phone="+phone+"&gender="+gender+"&company="+company+"&expiresInMinutes="+expiresInMinutes;
+        xhr.open("GET", URLforGET);
+        xhr.send();
+    
+  }
+  else{
+      document.getElementById("sendStat").innerHTML = "Insert the ID!";
+      document.getElementById("sendStat").style = "color : red";
+  }
+	
+};	
+	
+	
+	
+	
+	
+</script>
+	
+	
+
+
+
+</body></html>

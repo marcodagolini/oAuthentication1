@@ -293,6 +293,7 @@ var lpGetAuthenticationToken = function(callback) {
 		
 	// }setTimeout(ahead, 5000);
 };
+	/*
 if(localStorage.getItem('MyWebMessaging')=="yes"){
 	$( '#MDembeddedHTML' ).click();
 	function ahead(){
@@ -306,6 +307,8 @@ if(localStorage.getItem('MyWebMessaging')=="yes"){
 		
 	}setTimeout(ahead, 1000);
 }
+*/
+	
 	
 $("#sub").on("input", function() {
 	if ($("#CustomerID").val() != "") {
@@ -395,9 +398,9 @@ function sendData() {
             Token = jsonResult.result;
 	    console.log(Token);
             localStorage.setItem('token', Token);
-	    if(localStorage.getItem('MyWebMessaging')=="yes"){
-		    location.reload();
-	    }
+	    //if(localStorage.getItem('MyWebMessaging')=="yes"){
+		//    location.reload();
+	   // }
             lpGetAuthenticationToken();
 	    
           }

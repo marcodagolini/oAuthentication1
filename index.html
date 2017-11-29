@@ -159,16 +159,16 @@ font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","
 <label for="customerID">customerId:</label>
 <input id="customerID" value="vip" size="30" class="smallinput"><br>
 
-<div class="smalltext">balance:</div>
+<label for="balance">balance:</label>
 <input id="balance" value="-400.99" size="30" class="smallinput"><br>
-	
-<div class="smalltext">socialId:</div>
+
+<label for="socialId">socialId:</label>
 <input id="socialId" value="3456787654" size="30" class="smallinput"><br>
 
-<div style="float:left;" class="smalltext">imei:</div>
+<label for="imei">imei:</label>
 <input id="imei" value="99966321" float="left" size="30" class="smallinput"><br>
 
-<div class="smalltext">userName:</div>
+<label for="userName">userName:</label>
 <input id="userName" value="user000" size="30" class="smallinput"><br>
 
 <div class="smalltext">companySize:</div>
@@ -392,7 +392,7 @@ function sendData() {
         var xhr = new XMLHttpRequest();
         xhr.addEventListener("readystatechange", function () {
           if (this.readyState === 4) {
-	    $("#MDembeddedHTML").css({"visibility":"visible", "float":"left"});
+	    $("#MDembeddedHTML").css({"visibility":"visible"});
             var jsonResult = JSON.parse(this.responseText);
             Token = jsonResult.result;
 	    console.log(Token);
